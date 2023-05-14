@@ -1,0 +1,22 @@
+{
+  "name": "dview",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/index.js",
+  "module": "es/index.mjs",
+  "files": [
+    "es",
+    "lib"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "dview"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "author": "d",
+  "license": "ISC"
+}
