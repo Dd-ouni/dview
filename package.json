@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:dview": "gulp -f packages/components/script/build/index.mjs"
+    "build:dview": "gulp -f packages/components/script/build/index.mjs",
+    "publish:dview": "gulp -f packages/components/script/publish/index.mjs"
   },
   "keywords": [],
   "author": "",
