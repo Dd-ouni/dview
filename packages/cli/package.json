@@ -1,0 +1,13 @@
+{
+  "name": "create-ddview",
+  "version": "1.0.0",
+  "description": "",
+  "bin": "index.js",
+  "type": "module",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "command-line-args": "^5.2.1"
+  }
+}

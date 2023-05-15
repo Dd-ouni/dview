@@ -1,5 +1,6 @@
 import DefaultTheme from "vitepress/theme";
 import ddview from "ddview";
+// https://ddviewui.github.io/ddview/
 export default {
   ...DefaultTheme,
   enhanceApp: async ({ app }) => {
