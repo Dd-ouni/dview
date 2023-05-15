@@ -1,6 +1,5 @@
 # ddview
 ## todo list
-***
 - [x] init monorepo+pnpm project
 - [x] init components
   - [x] add component
