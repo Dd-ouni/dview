@@ -1,9 +1,10 @@
 <template>
-  <button class="d-button">
-    <slot>按钮啊222111</slot>
-  </button>
+  <u-button>
+    <slot></slot>
+  </u-button>
 </template>
 <script setup>
 import './style/index.scss';
+import uButton from "uView-ui/components/u-button/u-button.vue";
 defineOptions({ name: 'd-button' });
 </script>
