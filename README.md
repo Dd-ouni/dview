@@ -9,6 +9,6 @@
 - :white_check_mark: add docs 
 - :white_large_square: add create-ddview
 - :white_check_mark: add ESlint+Prettier+Stylelint
-- :white_large_square: add test
+- :white_check_mark: add Vitest
 ## refer
 [Easyest：基于Vite4+TypeScript的Vue3组件库开发框架](https://github.com/qddidi/easyest "基于Vite4+TypeScript的Vue3组件库开发框架")
