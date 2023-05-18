@@ -1,10 +1,10 @@
 <template>
-  <u-button>
+  <el-button v-bind="$attrs">
     <slot></slot>
-  </u-button>
+  </el-button>
 </template>
 <script setup>
-import './style/index.scss';
-import uButton from "uView-ui/components/u-button/u-button.vue";
+import './style/index.scss'
+import { ElButton } from 'element-plus'
 defineOptions({ name: 'd-button' });
 </script>

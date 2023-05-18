@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
-import DefineOptions from 'unplugin-vue-define-options/vite';
+import DefineOptions from 'unplugin-vue-define-options/vite'
 export default defineConfig({
   test: {
     environment: 'happy-dom'
@@ -11,8 +11,8 @@ export default defineConfig({
     //压缩
     //minify: false,
     rollupOptions: {
-      //忽略打包vue文件 和 scss
-      external: ['vue', /\.scss/],
+      //忽略打包vue文件 element-plus 和 scss
+      external: ['vue', 'element-plus', /^element-plus\/theme-chalk\/.*\.css$/, /\.scss/],
       input: ['index.js'],
       output: [
         {
@@ -63,6 +63,7 @@ export default defineConfig({
           });
         }
       }
-    }
+    },
+
   ]
 });

@@ -22,5 +22,9 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/Dd-ouni/dview"
+  },
+  "peerDependencies": {
+    "vue": "^3.2.36",
+    "element-plus": "^2.3.4"
   }
 }
