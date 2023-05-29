@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
+import vueJsx from "@vitejs/plugin-vue-jsx";
 import DefineOptions from 'unplugin-vue-define-options/vite'
 export default defineConfig({
   test: {
@@ -45,6 +46,7 @@ export default defineConfig({
   },
   plugins: [
     vue(),
+    vueJsx(),
     DefineOptions(), // 去掉打包 setup 的 defineOptions
     {
       name: 'style', // 打包import sass 2 import css

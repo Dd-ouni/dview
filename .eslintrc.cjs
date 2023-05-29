@@ -13,6 +13,13 @@ module.exports = {
         defineOptions: true
     },
     parser: 'vue-eslint-parser',
+    parserOptions: {
+        ecmaVersion: 'latest',
+        sourceType: 'module',
+        ecmaFeatures: {
+            jsx: true
+        }
+    },
     plugins: ['vue'],
     rules: {
         'vue/multi-word-component-names': 'off'
