@@ -2,19 +2,11 @@
 
 #### 基础使用
   
-- 痛点：在开发管理系统时，每个页面都会使用到 [Container 布局容器](https://doc-archive.element-plus.org/#/zh-CN/component/container#container-bu-ju-rong-qi) 提供的常规布局。必须根据设计稿组合各种布局，不同组合不同嵌套，让代码变得很不直观。
-- 开发体验：只需要使用对应的插槽就会得到对应的常规布局。
-::: details 显示结构变化代码
+- 痛点：
+  1. 不同的布局的嵌套方式不一致
+  2. 改版成本大，O(n)
+::: details 显示痛点代码
 ```html
-<d-container>
-  <template #wheader>wheader</template>
-  <template #aside>aside</template>
-  main
-  <template #footer>footer</template>
-</d-container>
-
-<!-- 等于 -->
-
 <el-container>
   <el-header>wheader</el-header>
   <el-container>
@@ -29,7 +21,27 @@
 
 :::
 
-- 扩展：除此之外还可以根据业务拓展：可伸缩 aside、navbar、alert
+- 解决：
+  1. 无嵌套布局，利用插槽实现
+  2. 封装优化改版成本，O(n) -> O(k)
+
+::: details 显示解决代码
+```html
+<d-container>
+  <template #wheader>wheader</template>
+  <template #aside>aside</template>
+  main
+  <template #footer>footer</template>
+</d-container>
+```
+
+:::
+
+- 扩展：
+  1. 可伸缩 aside，解决侧边栏可视大小小问题
+  2. 提示用 alert，提供悬浮信息提示
+  3. 动态布局计算，利用 具名作用域插槽 提供窗口大小变化后，具体容器的大小
+  4. 装卸容器，利用 具名作用域插槽 提供回调式动态控制具体容器的显示隐藏
 - 效果：
 
 <d-container>

@@ -2,7 +2,9 @@
 
 #### 基础使用
   
-- 痛点：表格作为输出数据的主要载体，element-plus 封装的颗粒度较为细致、灵活，但是对于业务开发来说并不是特别方便， 需要连接表格、分页组件。columns嵌套在元素内，并没有特别的MVC分离(仁者见仁)。
+- 痛点：
+  1. table 和 pagination 分离，这样子很灵活，但是对业务开发并不便捷、友好。
+  2. column 作为标签形式，并不符合 MVC 模式，View 和 Model 分离。
 ::: details 显示痛点代码
 ```html
 <template>
@@ -12,6 +14,7 @@
     <el-table-column prop="date" label="日期" width="180"></el-table-column>
     <el-table-column prop="name" label="姓名" width="180"></el-table-column>
   </el-table>
+
   <!-- pagination -->
   <el-pagination
     :pager-count="tableData.length"
@@ -39,8 +42,12 @@
 ```
 
 :::
-- 开发体验：只需要关注data和columns。
-::: details 显示开发体验代码
+- 解决：
+  1. 组合 table 与 pagination，让业务开发更专注业务开发
+  2. 参数化 column，符合 MVC 模式
+
+
+::: details 显示解决代码
 ```html
 <template>
   <d-table :column="columns" :data="tableData"></d-table>
@@ -73,9 +80,13 @@ const tableData = reactive([
 
 ```
 :::
-- 扩展：可以拓展：自定义列头、无分页、本地分页、根据业务需求
+- 扩展：
+  1. 自定义列头
+  2. 分页模式
 - 效果：
-<d-table :column="column" :data="tableData"></d-table>
+<div id="diy">
+  <d-table :column="column" :data="tableData"></d-table>
+</div>
 
 <script setup>
 import { ref, reactive, h, getCurrentInstance } from 'vue'
@@ -116,4 +127,26 @@ const tableData = reactive([
   },
 ])
 </script>
+
+<style>
+#diy .el-table__header,
+#diy .el-table__body{
+  margin: 0;
+  table-layout: fixed;
+  border-collapse: initial;
+}
+#diy th, #diy td, #diy tr{
+  border: none;
+}
+#diy tr{
+  background-color: white;
+}
+#diy .el-table td.el-table__cell, #diy .el-table th.el-table__cell.is-leaf{
+    border-bottom: 1px solid #ebeef5;
+}
+#diy .el-pager{
+  padding-left:0;
+  margin: 0;
+}
+</style>
 
