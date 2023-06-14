@@ -21,7 +21,7 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Dd-ouni/dview"
+    "url": "https://github.com/pupa91/dview"
   },
   "peerDependencies": {
     "vue": "^3.2.36",
